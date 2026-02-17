@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/* =========================
+   LIGHT THEME
+========================= */
+:root {
+  /* Brand */
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --secondary: #4F46E5;
+  --accent: #8B5CF6;
+
+  /* Surfaces */
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-elevated: #F1F5F9;
+  --border: #E2E8F0;
+
+  /* Text */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+
+  /* States */
+  --success: #22C55E;
+  --danger: #EF4444;
+  --warning: #F59E0B;
+
+  /* Focus */
+  --focus-ring: #3B82F6;
+
+  /* Chat */
+  --message-sent: #2563EB;
+  --message-received: #E2E8F0;
+
+  /* Shadow */
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================
+   DARK THEME (DEFAULT)
+========================= */
+.dark {
+  --primary: #2563EB;
+  --primary-hover: #1E40AF;
+  --secondary: #4F46E5;
+  --accent: #8B5CF6;
+
+  --background: #0F172A;
+  --surface: #1E293B;
+  --surface-elevated: #334155;
+  --border: #334155;
+
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  --success: #22C55E;
+  --danger: #EF4444;
+  --warning: #F59E0B;
+
+  --focus-ring: #2563EB;
+
+  --message-sent: #2563EB;
+  --message-received: #334155;
+
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   GLOBAL BASE
+========================= */
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+}
+
+/* =========================
+   CUSTOM UTILITIES
+========================= */
+@layer utilities {
+
+  /* Backgrounds */
+  .bg-primary { background-color: var(--primary); }
+  .bg-primary-hover:hover { background-color: var(--primary-hover); }
+  .bg-surface { background-color: var(--surface); }
+  .bg-elevated { background-color: var(--surface-elevated); }
+
+  /* Text */
+  .text-primary { color: var(--text-primary); }
+  .text-secondary { color: var(--text-secondary); }
+  .text-success { color: var(--success); }
+  .text-danger { color: var(--danger); }
+  .text-warning { color: var(--warning); }
+
+  /* Borders */
+  .border-default { border-color: var(--border); }
+
+  /* Focus */
+  .focus-ring:focus {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  /* Shadow */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+}
