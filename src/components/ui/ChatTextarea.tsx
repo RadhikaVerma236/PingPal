@@ -17,7 +17,6 @@ const ChatTextarea: React.FC<ChatTextareaProps> = ({
   const pickerRef = useRef<HTMLDivElement>(null);
   const [showPicker, setShowPicker] = useState(false);
 
-  // 🔥 Auto Resize With Max Height
   useEffect(() => {
     const el = textareaRef.current;
     if (!el) return;
@@ -26,7 +25,7 @@ const ChatTextarea: React.FC<ChatTextareaProps> = ({
     el.style.height = Math.min(el.scrollHeight, 150) + "px";
   }, [value]);
 
-  // 🔥 Enter to Send / Shift+Enter New Line
+  // Enter to Send / Shift+Enter New Line
   const handleKeyDown = (
     e: React.KeyboardEvent<HTMLTextAreaElement>
   ) => {
@@ -38,7 +37,6 @@ const ChatTextarea: React.FC<ChatTextareaProps> = ({
     }
   };
 
-  // 🔥 Close picker when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -54,7 +52,7 @@ const ChatTextarea: React.FC<ChatTextareaProps> = ({
       document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // 🔥 Add emoji to message
+  // Add emoji to message
  const handleEmojiClick = (emojiData: { emoji: string }) => {
   const textarea = textareaRef.current;
   if (!textarea) return;
@@ -151,9 +149,9 @@ const ChatTextarea: React.FC<ChatTextareaProps> = ({
           className="absolute bottom-16 right-0 z-50"
         >
           <EmojiPicker
-  onEmojiClick={handleEmojiClick}
-  theme={Theme.AUTO}
-/>
+            onEmojiClick={handleEmojiClick}
+            theme={Theme.AUTO}
+          />
         </div>
       )}
     </div>
